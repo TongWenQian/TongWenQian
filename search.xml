@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[第三篇测试]]></title>
+    <url>%2FTongWenQian%2F2019%2F05%2F30%2F%E7%AC%AC%E4%B8%89%E7%AF%87%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[这是一个标签的测试]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第二篇博客]]></title>
     <url>%2FTongWenQian%2F2019%2F05%2F29%2F%E7%AC%AC%E4%BA%8C%E7%AF%87%E5%8D%9A%E5%AE%A2%2F</url>
     <content type="text"><![CDATA[#这是我的第二篇博客]]></content>
