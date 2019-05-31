@@ -433,7 +433,7 @@
             
                 <span class="post-meta-item-text">评论数：</span>
                 <a href="/TongWenQian/2019/05/29/第二篇博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/TongWenQian/2019/05/29/第二篇博客/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/TongWenQian/2019/05/29/第二篇博客/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -515,6 +515,30 @@
     
 
     
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>卿酒酒</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://github.com/TongWenQian/TongWenQian/2019/05/29/第二篇博客/" title="第二篇博客">https://github.com/TongWenQian/TongWenQian/2019/05/29/第二篇博客/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
@@ -563,9 +587,6 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
 
   
@@ -896,41 +917,37 @@
   
 
   
-
-
   
-    <!-- LOCAL: You can save these files to your site and update links -->
 
-  
-  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
-<!-- END LOCAL -->
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
 <script>
-  function renderGitment() {
-    var gitment = new Gitmint({
-      id: window.location.pathname,
-      owner: 'TongWenQian',
-      repo: 'blog-comment',
-      
-        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-      
-      oauth: {
-      
-      
-        client_secret: 'b4f1de6e6bf22efd824483b99a8fe791f6d87975',
-      
-        client_id: 'e05dcc780f8dd4347e8f'
-      }
-    });
-    gitment.render('gitment-container');
-  }
-
-  
-    renderGitment();
-  
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: true,
+    appId: 'h5k2f1u2P3aGJMxSlfTFLBS7-gzGzoHsz',
+    appKey: 'MUA4w5cjhKfP9bcHyvETumkG',
+    placeholder: '请输入你的评论',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
 </script>
+
+
+
 
   
 
