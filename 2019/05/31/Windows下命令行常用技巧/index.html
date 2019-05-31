@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Her blog">
 <meta property="og:description" content="使用z进行快速跳跃 mkdir ~/repos cd ~/repos git clone https://github.com/rupa/z.git touch ~/.bashrc start ~/.bashrc在文件里写： 12. ~/repos/z/z.sh alias j=&amp;apos;z&amp;apos;  重启 Git Bash">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T14:26:40.523Z">
+<meta property="og:updated_time" content="2019-05-31T14:30:43.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下命令行常用技巧">
 <meta name="twitter:description" content="使用z进行快速跳跃 mkdir ~/repos cd ~/repos git clone https://github.com/rupa/z.git touch ~/.bashrc start ~/.bashrc在文件里写： 12. ~/repos/z/z.sh alias j=&amp;apos;z&amp;apos;  重启 Git Bash">
@@ -410,7 +410,7 @@
                 
               
 
-              <time title="创建时间：2019-05-31 21:26:01 / 修改时间：22:26:40" itemprop="dateCreated datePublished" datetime="2019-05-31T21:26:01+08:00">2019-05-31</time>
+              <time title="创建时间：2019-05-31 21:26:01 / 修改时间：22:30:43" itemprop="dateCreated datePublished" datetime="2019-05-31T21:26:01+08:00">2019-05-31</time>
             
 
             
@@ -528,7 +528,7 @@
 <li>你去过的所有目录都会被记录了！使用 j XXX 就可以快速到达之前去过的目录了！</li>
 <li>使用 j 可以查看所有去过的目录<br>注意，~/repos/z/z.sh 不能删除，删除了就不能用了</li>
 </ol>
-<h1 id="使用-bash-alias-快速输入命令"><a href="#使用-bash-alias-快速输入命令" class="headerlink" title="使用 bash alias 快速输入命令"></a>使用 bash alias 快速输入命令</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>echo ‘xxx’ &gt; ~/.bashrc 会覆盖文件的所有内容，请提前备份 ~/.bashrc！！把 &gt; 换成 &gt;&gt; 才是追加内容。</p>
+<h1 id="使用-bash-alias-快速输入命令"><a href="#使用-bash-alias-快速输入命令" class="headerlink" title="使用 bash alias 快速输入命令"></a>使用 bash alias 快速输入命令</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>echo ‘xxx’ &gt; ~/.bashrc 会覆盖文件的所有内容，请提前备份 ~/.bashrc！！把 &gt; 换成 &gt;&gt; 才是追加内容</p>
 <h2 id="代码-方便日后查阅"><a href="#代码-方便日后查阅" class="headerlink" title="代码(方便日后查阅)"></a>代码(方便日后查阅)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">. ~/GitHub/z/z.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export PYTHONIOENCODING=UTF-8</span><br><span class="line">export LANG=&apos;en_US.UTF-8&apos;</span><br><span class="line">export LC_ALL=&apos;en_US.UTF-8&apos;</span><br><span class="line"></span><br><span class="line">alias j=&apos;z&apos;</span><br><span class="line">alias gst=&quot;git status -sb&quot;</span><br><span class="line">alias ga=&quot;git add&quot;</span><br><span class="line">alias gc=&quot;git commit -v&quot;</span><br><span class="line">alias gcc=&quot;git commit . -m update&quot;</span><br><span class="line">alias gp=&quot;git push&quot;</span><br><span class="line">alias gl=&quot;git pull&quot;</span><br><span class="line">alias open=&quot;start&quot;</span><br><span class="line">alias ll=&quot;ls -la&quot;</span><br><span class="line">alias glog=&quot;git log --graph --pretty=format:&apos;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&apos; --abbrev-commit -- | less&quot;</span><br></pre></td></tr></table></figure>
 <h1 id="让Windows支持tree"><a href="#让Windows支持tree" class="headerlink" title="让Windows支持tree"></a>让Windows支持tree</h1><ol>
 <li>下载 GnuTree.exe 双击安装，一路下一步（注意安装路径里不要有空格，建议安装在 C:\Software\GnuWin32</li>
@@ -549,8 +549,8 @@ b. 如果不知道 Windows 怎么添加环境变量 PATH，百度『Windows 环�
 <li><code>npm i -g fanyi</code></li>
 <li><code>echo &quot;alias yd=&#39;fanyi&#39;&quot; &gt;&gt; ~/.bashrc</code><br>如果提示 commond not found，就需要更新 PATH<br><code>export PATH=&quot;xxx:$PATH&quot;</code><br>其中 xxx 的示例为 /c/Users/lev/AppData/Roaming/npm</li>
 </ol>
-<h1 id="命令行常用快捷键"><a href="#命令行常用快捷键" class="headerlink" title="命令行常用快捷键"></a>命令行常用快捷键</h1><ol>
-<li>Ctrl + R 搜索历史，再次 Ctrl + R 切换（按左右键，退出选择且并未执行；若直接按回车，退出选择且执行命令行）</li>
+<h1 id="命令行常用快捷键"><a href="#命令行常用快捷键" class="headerlink" title="命令行常用快捷键"></a>命令行常用快捷键</h1><p> *Ctrl + R 搜索历史，再次 Ctrl + R 切换（按左右键，退出选择且并未执行；若直接按回车，退出选择且执行命令行）</p>
+<ul>
 <li>Ctrl + A 行首</li>
 <li>Ctrl + E 行尾</li>
 <li>Ctrl + B 退后</li>
@@ -560,7 +560,7 @@ b. 如果不知道 Windows 怎么添加环境变量 PATH，百度『Windows 环�
 <li>Ctrl + C 中断</li>
 <li>Ctrl + G 退出搜索</li>
 <li>Alt + . 使用上一行命令的最后一个参数</li>
-</ol>
+</ul>
 <h1 id="快捷复制粘贴"><a href="#快捷复制粘贴" class="headerlink" title="快捷复制粘贴"></a>快捷复制粘贴</h1><h2 id="Git-Bash"><a href="#Git-Bash" class="headerlink" title="Git Bash"></a>Git Bash</h2><ul>
 <li>选中即为复制</li>
 <li>按鼠标中键粘贴/Shift + insert<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2></li>
