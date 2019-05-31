@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>茜&#39;s blog</title>
+  <title>Her blog</title>
   
   <subtitle>All things come to those who wait.</subtitle>
   <link href="/TongWenQian/atom.xml" rel="self"/>
   
   <link href="https://github.com/TongWenQian/TongWenQian/"/>
-  <updated>2019-05-31T12:23:11.025Z</updated>
+  <updated>2019-05-31T12:54:12.121Z</updated>
   <id>https://github.com/TongWenQian/TongWenQian/</id>
   
   <author>
-    <name>卿酒酒</name>
+    <name>柳梦璃</name>
     
   </author>
   
@@ -21,16 +21,20 @@
     <link href="https://github.com/TongWenQian/TongWenQian/2019/05/31/Hexo%E4%B8%8EGitHub%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2/"/>
     <id>https://github.com/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/</id>
     <published>2019-05-31T09:12:01.000Z</published>
-    <updated>2019-05-31T12:23:11.025Z</updated>
+    <updated>2019-05-31T12:54:12.121Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="使用-Hexo-GitHub-建一个博客"><a href="#使用-Hexo-GitHub-建一个博客" class="headerlink" title="使用 Hexo + GitHub 建一个博客"></a>使用 Hexo + GitHub 建一个博客</h1><h2 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h2><ol><li>进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 瞎搞。</li><li>在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名）</li><li><code>npm install -g hexo-cli</code>，安装 Hexo</li><li><code>hexo init myBlog</code></li><li><code>cd myBlog</code></li><li><code>npm i</code></li><li><code>hexo new</code> 开博大吉，你会看到一个 md 文件的路径<br> <img src="qianduan_hexo.png" alt="注意：Windows 的路径中的 \ 需要变成 / 才行"></li><li><p>运行 start source/_post/开博大吉.md 来编辑这个 md 文件，内容自己想（Ubuntu 系统用 xdg-open xxxxxxxxxxxxxxxxxxx.md 命令）</p><ul><li>举例：如果 Windows 提示的是 INFO created: ~\Desktop\myBlog\source_posts\开博大吉.md<br>那么你的命令就应该是 start “~/Desktop/myBlog/source/_posts/开博大吉.md” 注意引号和斜杠，如果路径里没有空格，就不需要引号。</li><li><p>内容示例<br>-–<br>title: 开博大吉<br>-–</p><p># 哈哈<br>我的博客开通啦</p></li></ul></li><li><p><code>start _config.yml</code>，编辑网站配置</p><ul><li>把第 6 行的 title 改成你想要的名字</li><li>把第 9 行的 author 改成你的大名</li><li>把最后一行的 type 改成 <code>type: git</code></li><li>在最后一行后面新增一行，左边与 type 平齐，加上一行 <code>repo: 仓库地址</code> （请将仓库地址改为「你的用户名.github.io」对应的仓库地址，仓库地址以        <a href="mailto:git@github.com">git@github.com</a>: 开头。注意repo:后面有一个空格）</li></ul></li><li><code>npm install hexo-deployer-git --save</code>，安装 git 部署插件</li><li><code>hexo deploy</code></li><li>进入「你的用户名.github.io」对应的 repo，打开 GitHub Pages 功能，如果已经打开了，你应该会看到一个预览链接</li><li>用浏览器访问「预览链接/index.html」就应该看到了你的博客！（GitHub Pages 存在延迟，如果没看到，过三分钟再刷新看看）<h2 id="第二篇博客"><a href="#第二篇博客" class="headerlink" title="第二篇博客"></a>第二篇博客</h2></li><li><code>hexo new 第二篇博客</code></li><li>复制显示的路径，使用 start 路径 来编辑它</li><li><code>hexo generate</code></li><li><code>hexo deploy</code></li><li>去看你的博客，应该能看到第二篇博客了<h2 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h2></li><li><a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集</li><li>随便找一个主题，进入主题的 GitHub 首页，比如我找的是 <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li><li>复制它的 SSH 地址或 HTTPS 地址，假设地址为 <a href="mailto:git@github.com">git@github.com</a>:iissnan/hexo-theme-next.git</li><li><code>cd myBlog</code></li><li><code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code></li><li>将 _config.yml 的第 76 行改为 <code>theme: next</code>，保存</li><li><code>hexo generate</code></li><li><code>hexo deploy</code></li><li>等一分钟，然后刷新你的博客页面，你会看到一个新的外观。如果不喜欢这个主题，就回到第 1 步，重选一个主题。<h2 id="上传源代码"><a href="#上传源代码" class="headerlink" title="上传源代码"></a>上传源代码</h2>注意「你的用户名.github.io」上保存的只是你的博客，并没有保存「生成博客的程序代码」，你需要再创建一个名为 blog-generator 的空仓库，用来保存 myBlog 里面的「生成博客的程序代码」。<ol><li>在 GitHub 创建 blog-generator 空仓库<br><img src="qianduan_hexo2.png" alt="按照截图中的命令执行即可"></li><li>按照截图中的命令执行即可<br>这样一来，你的博客发布在了「你的用户名.github.io」而你的「生成博客的程序代码」发布在了 blog-generator。所有数据万无一失，你就不会因为误删 myBlog 目录而痛哭了。<br>以后每次 hexo deploy 完之后，博客就会更新；然后你还要要 add / commit /push 一下「生成博客的程序代码」，以防万一。<br>这个 blog-generator 就是用来生成博客的程序，而「你的用户名.github.io」仓库就是你的博客页面。</li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h1><ol><li>进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 建博客。</li><li>在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名）</li><li><code>npm install -g hexo-cli</code>，安装 Hexo</li><li><code>hexo init myBlog</code></li><li><code>cd myBlog</code></li><li><code>npm i</code></li><li><code>hexo new</code> 开博大吉，你会看到一个 md 文件的路径<a id="more"></a><img src="qianduan_hexo.png" alt>注意：Windows 的路径中的 \ 需要变成 / 才行</li><li><p>运行 start source/_post/开博大吉.md 来编辑这个 md 文件，内容自己想（Ubuntu 系统用 xdg-open xxxxxxxxxxxxxxxxxxx.md 命令）</p><ul><li>举例：如果 Windows 提示的是 INFO created: ~\Desktop\myBlog\source_posts\开博大吉.md<br>那么你的命令就应该是 start “~/Desktop/myBlog/source/_posts/开博大吉.md” 注意引号和斜杠，如果路径里没有空格，就不需要引号。</li><li>内容示例<br>-–<br>title: 开博大吉<br>-–</li></ul><p># 哈哈<br>我的博客开通啦</p></li><li><code>start _config.yml</code>，编辑网站配置<ul><li>把第 6 行的 title 改成你想要的名字</li><li>把第 9 行的 author 改成你的大名</li><li>把最后一行的 type 改成 <code>type: git</code></li><li>在最后一行后面新增一行，左边与 type 平齐，加上一行 <code>repo: 仓库地址</code> （请将仓库地址改为「你的用户名.github.io」对应的仓库地址，仓库地址以        <a href="mailto:git@github.com">git@github.com</a>: 开头。注意repo:后面有一个空格）</li></ul></li><li><code>npm install hexo-deployer-git --save</code>，安装 git 部署插件</li><li><code>hexo deploy</code></li><li>进入「你的用户名.github.io」对应的 repo，打开 GitHub Pages 功能，如果已经打开了，你应该会看到一个预览链接</li><li>用浏览器访问「预览链接/index.html」就应该看到了你的博客！（GitHub Pages 存在延迟，如果没看到，过三分钟再刷新看看）</li></ol><h1 id="第二篇博客"><a href="#第二篇博客" class="headerlink" title="第二篇博客"></a>第二篇博客</h1><ol><li><code>hexo new 第二篇博客</code></li><li>复制显示的路径，使用 start 路径 来编辑它</li><li><code>hexo generate</code></li><li><code>hexo deploy</code></li><li>去看你的博客，应该能看到第二篇博客了</li></ol><h1 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h1><ol><li><a href="https://github.com/hexojs/hexo/wiki/Themes">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集</li><li>随便找一个主题，进入主题的 GitHub 首页，比如我找的是 <a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></li><li>复制它的 SSH 地址或 HTTPS 地址，假设地址为 <a href="mailto:git@github.com">git@github.com</a>:iissnan/hexo-theme-next.git</li><li><code>cd myBlog</code></li><li><code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code></li><li>将 _config.yml 的第 76 行改为 <code>theme: next</code>，保存</li><li><code>hexo generate</code></li><li><code>hexo deploy</code></li><li>等一分钟，然后刷新你的博客页面，你会看到一个新的外观。如果不喜欢这个主题，就回到第 1 步，重选一个主题。</li></ol><h1 id="上传源代码"><a href="#上传源代码" class="headerlink" title="上传源代码"></a>上传源代码</h1><p>注意「你的用户名.github.io」上保存的只是你的博客，并没有保存「生成博客的程序代码」，你需要再创建一个名为 blog-generator 的空仓库，用来保存 myBlog  里面的「生成博客的程序代码」。</p><ol><li>在 GitHub 创建 blog-generator 空仓库<br><img src="qianduan_hexo2.png" alt="按照截图中的命令执行即可"></li><li>按照截图中的命令执行即可</li></ol><p>这样一来，你的博客发布在了「你的用户名.github.io」而你的「生成博客的程序代码」发布在了 blog-generator。所有数据万无一失，你就不会因为误删 myBlog 目录而痛哭了。<br>以后每次 hexo deploy 完之后，博客就会更新；然后你还要要 add / commit /push 一下「生成博客的程序代码」，以防万一。<br>这个 blog-generator 就是用来生成博客的程序，而「你的用户名.github.io」仓库就是你的博客页面。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;使用-Hexo-GitHub-建一个博客&quot;&gt;&lt;a href=&quot;#使用-Hexo-GitHub-建一个博客&quot; class=&quot;headerlink&quot; title=&quot;使用 Hexo + GitHub 建一个博客&quot;&gt;&lt;/a&gt;使用 Hexo + GitHub 建一个博客&lt;/
-      
+      &lt;h1 id=&quot;主要步骤&quot;&gt;&lt;a href=&quot;#主要步骤&quot; class=&quot;headerlink&quot; title=&quot;主要步骤&quot;&gt;&lt;/a&gt;主要步骤&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 建博客。&lt;/li&gt;
+&lt;li&gt;在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;，安装 Hexo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo init myBlog&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cd myBlog&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm i&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo new&lt;/code&gt; 开博大吉，你会看到一个 md 文件的路径
     
     </summary>
     
@@ -40,52 +44,6 @@
       <category term="hexo" scheme="https://github.com/TongWenQian/TongWenQian/tags/hexo/"/>
     
       <category term="github" scheme="https://github.com/TongWenQian/TongWenQian/tags/github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第三篇测试</title>
-    <link href="https://github.com/TongWenQian/TongWenQian/2019/05/30/%E7%AC%AC%E4%B8%89%E7%AF%87%E6%B5%8B%E8%AF%95/"/>
-    <id>https://github.com/TongWenQian/TongWenQian/2019/05/30/第三篇测试/</id>
-    <published>2019-05-30T03:44:37.000Z</published>
-    <updated>2019-05-30T10:51:38.656Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="测试文章"><a href="#测试文章" class="headerlink" title="测试文章"></a>测试文章</h1><h2 id="这是第一篇文章"><a href="#这是第一篇文章" class="headerlink" title="这是第一篇文章"></a>这是第一篇文章</h2><h3 id="这个是三级标题"><a href="#这个是三级标题" class="headerlink" title="这个是三级标题"></a>这个是三级标题</h3><ul><li>列表1</li><li>列表2<br>a 子列表<br>b 子列表</li><li>列表3</li></ul><hr><p><a href="https://www.baidu.com" target="_blank" rel="noopener">百度地址</a><br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1559223120012&amp;di=0fbcd9f36d904b67118c115ee151629b&amp;imgtype=0&amp;src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fexp%2Fw%3D500%2Fsign%3De1065a9632fae6cd0cb4ab613fb20f9e%2F3812b31bb051f819f035b8ebddb44aed2e73e77b.jpg" alt="baidu图片"></p><p><em>字体是斜的</em><br><strong>字体加粗</strong><br><code>&lt;html&gt;&lt;/html</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;多行代码&lt;/div&gt; </span><br><span class="line">&lt;div&gt;多行代码&lt;/div&gt;</span><br><span class="line">&lt;div&gt;多行代码&lt;/div&gt;</span><br></pre></td></tr></table></figure></p><blockquote><p>我的内容是引用的</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;测试文章&quot;&gt;&lt;a href=&quot;#测试文章&quot; class=&quot;headerlink&quot; title=&quot;测试文章&quot;&gt;&lt;/a&gt;测试文章&lt;/h1&gt;&lt;h2 id=&quot;这是第一篇文章&quot;&gt;&lt;a href=&quot;#这是第一篇文章&quot; class=&quot;headerlink&quot; title=&quot;这是第
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://github.com/TongWenQian/TongWenQian/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css标签" scheme="https://github.com/TongWenQian/TongWenQian/tags/css%E6%A0%87%E7%AD%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://github.com/TongWenQian/TongWenQian/2019/05/29/hello-world/"/>
-    <id>https://github.com/TongWenQian/TongWenQian/2019/05/29/hello-world/</id>
-    <published>2019-05-29T08:12:00.503Z</published>
-    <updated>2019-05-29T08:12:00.504Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
