@@ -111,13 +111,13 @@
 <meta property="og:site_name" content="Her Blog">
 <meta property="og:description" content="主要步骤 进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 建博客。 在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名） npm install -g hexo-cli，安装 Hexo hexo init myBlog cd myBlog np">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/TongWenQian/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo.png">
-<meta property="og:image" content="https://github.com/TongWenQian/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo2.png">
+<meta property="og:image" content="https://github.com/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo.png">
+<meta property="og:image" content="https://github.com/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo2.png">
 <meta property="og:updated_time" content="2019-06-02T06:38:36.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo与GitHub建立博客">
 <meta name="twitter:description" content="主要步骤 进入一个安全的目录，比如 cd ~/Desktop 或者 cd ~/Documents，别在根目录 / 建博客。 在 GitHub 上新建一个空 repo，repo 名称是「你的用户名.github.io」（注意个用户名是你的GitHub用户名，不是你的电脑用户名） npm install -g hexo-cli，安装 Hexo hexo init myBlog cd myBlog np">
-<meta name="twitter:image" content="https://github.com/TongWenQian/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo.png">
+<meta name="twitter:image" content="https://github.com/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo.png">
 
 
 
@@ -538,7 +538,7 @@
 <li><code>cd myBlog</code></li>
 <li><code>npm i</code></li>
 <li><code>hexo new</code> 开博大吉，你会看到一个 md 文件的路径<a id="more"></a>
-<img src="/TongWenQian/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo.png" alt>注意：Windows 的路径中的 \ 需要变成 / 才行</li>
+<img src="qianduan_hexo.png" alt>注意：Windows 的路径中的 \ 需要变成 / 才行</li>
 <li><p>运行 start source/_post/开博大吉.md 来编辑这个 md 文件，内容自己想（Ubuntu 系统用 xdg-open xxxxxxxxxxxxxxxxxxx.md 命令）</p>
 <ul>
 <li>举例：如果 Windows 提示的是 INFO created: ~\Desktop\myBlog\source_posts\开博大吉.md<br>那么你的命令就应该是 start “~/Desktop/myBlog/source/_posts/开博大吉.md” 注意引号和斜杠，如果路径里没有空格，就不需要引号。</li>
@@ -578,7 +578,7 @@
 </ol>
 <h1 id="上传源代码"><a href="#上传源代码" class="headerlink" title="上传源代码"></a>上传源代码</h1><p>注意「你的用户名.github.io」上保存的只是你的博客，并没有保存「生成博客的程序代码」，你需要再创建一个名为 blog-generator 的空仓库，用来保存 myBlog  里面的「生成博客的程序代码」。</p>
 <ol>
-<li>在 GitHub 创建 blog-generator 空仓库<br><img src="/TongWenQian/TongWenQian/TongWenQian/2019/05/31/Hexo与GitHub建立博客/qianduan_hexo2.png" alt="按照截图中的命令执行即可"></li>
+<li>在 GitHub 创建 blog-generator 空仓库<br><img src="qianduan_hexo2.png" alt="按照截图中的命令执行即可"></li>
 <li>按照截图中的命令执行即可</li>
 </ol>
 <p>这样一来，你的博客发布在了「你的用户名.github.io」而你的「生成博客的程序代码」发布在了 blog-generator。所有数据万无一失，你就不会因为误删 myBlog 目录而痛哭了。<br>以后每次 hexo deploy 完之后，博客就会更新；然后你还要要 add / commit /push 一下「生成博客的程序代码」，以防万一。<br>这个 blog-generator 就是用来生成博客的程序，而「你的用户名.github.io」仓库就是你的博客页面。</p>
@@ -727,7 +727,7 @@
                 
                   <a href="/TongWenQian/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -752,7 +752,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -779,7 +781,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -900,7 +904,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">15k</span>
   
 
   
@@ -909,7 +913,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
   
 </div>
 
