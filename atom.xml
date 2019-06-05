@@ -6,7 +6,7 @@
   <link href="/TongWenQian/atom.xml" rel="self"/>
   
   <link href="https://github.com/TongWenQian/TongWenQian/"/>
-  <updated>2019-06-05T04:14:58.817Z</updated>
+  <updated>2019-06-05T06:37:18.597Z</updated>
   <id>https://github.com/TongWenQian/TongWenQian/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://github.com/TongWenQian/TongWenQian/2019/06/05/%E6%AF%8F%E6%97%A5%E7%BB%83%E4%B9%A0-Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%9F%BA%E7%A1%80/"/>
     <id>https://github.com/TongWenQian/TongWenQian/2019/06/05/每日练习-Linux命令行基础/</id>
     <published>2019-06-05T04:08:27.000Z</published>
-    <updated>2019-06-05T04:14:58.817Z</updated>
+    <updated>2019-06-05T06:37:18.597Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Linux-命令基础"><a href="#Linux-命令基础" class="headerlink" title="Linux 命令基础"></a>Linux 命令基础</h1><ol><li>什么是绝对路径？什么是相对路径？<br>答：绝对路径是指文件或者目录在硬盘上真正的路径，例如 <code>E:/user/1.png</code> ，”/“开头，代表根目录。相对路径是指相对于当前的文件的路径。例如：<code>./1.png</code> 表示当前目录下的 1.png 图片。  </li><li>如何查看当前位置的绝对路径？<br>答： 在当前位置输入 <code>pwd</code> 命令。<a id="more"></a></li><li>如何查看系统的当前用户？<br>答： 使用命令 <code>whoami</code>。</li><li>如何查看某个脚本命令的位置？（比如node)<br>答： 以 node 为例，使用命令 <code>which node</code>。</li><li>请问使用||命令输出的当前路径下的文件信息中，前面的 -rwxr-xr-x 是什么意思？<br>答: 以从左到右顺序解释：<br>   1) 开头的 - 表示：文件<br>   2) r：可读<br>   3) w：可写<br>   4) x：表示可执行<br>   5) 第一个 r-x：用户所在组的权限<br>   6) 第二个 r-x：任意用户权限</li><li>**.*、./*、*.png 分别代表什么意思？<br>答：代表如下：<ul><li>**.*：所有 xx.xx 格式的文件</li><li>./*：表示当前目录下的所有文件和所有目录</li><li>*.png: 以 .png 结尾的文件</li></ul></li><li>sudo 是什么意思？<br>答： sudo 即 super user do ,它的意思是用超级管理员的权限执行（do）。</li><li>echo ‘aaa’ &gt; a.txt 与 echo ‘bbb’ &gt;&gt; b.txt 有什么区别？<br>答： echo ‘aaa’ &gt; a.txt 表示创建一个 a.txt (如果a.txt不存在）文件，并在 a.txt 中添加 aaa 内容，若再次往 a.txt 添加内容，会覆盖之前的内容。而 echo ‘bbb’ &gt;&gt; b.txt 表示在 b.txt 追加内容，不会覆盖本来就有的文件内容。</li><li>cat 命令能做什么？<br>答：可以进行如下使用：  <ul><li>cat filename：显示该文件内容  </li><li>cat &gt; filename：创建一个文件</li><li>cat filename1 filename2 &gt; filename：将两个文件合并成一个文件</li></ul></li><li>chmod +777 a.sh 是什么意思？ chmod 是什么？+777 是什么意思？<br>答： 表示任何人对 a.sh 都有读、写、运行三项权限。chmod 是目录或者文件权限设置的命令。由于读、写、运行三项权限可以用数字来表示，r=4,w=2,x=1，因此 777 表示 rwxrwxrwx ，即为该用户和其所在的组以及其他人都有最高的权限。</li></ol>]]></content>
+    <content type="html"><![CDATA[<h1 id="Linux-命令基础"><a href="#Linux-命令基础" class="headerlink" title="Linux 命令基础"></a>Linux 命令基础</h1><ol><li>什么是绝对路径？什么是相对路径？<br>答：绝对路径是指文件或者目录在硬盘上真正的路径，例如 <code>E:/user/1.png</code> ，”/“开头，代表根目录。相对路径是指相对于当前的文件的路径。例如：<code>./1.png</code> 表示当前目录下的 1.png 图片。  </li><li>如何查看当前位置的绝对路径？<br>答： 在当前位置输入 <code>pwd</code> 命令。<a id="more"></a></li><li>如何查看系统的当前用户？<br>答： 使用命令 <code>whoami</code>。</li><li>如何查看某个脚本命令的位置？（比如 node )<br>答： 以 node 为例，使用命令 <code>which node</code>。</li><li>请问使用||命令输出的当前路径下的文件信息中，前面的 -rwxr-xr-x 是什么意思？<br>答: 以从左到右顺序解释：<br>   1) 开头的 - 表示：文件<br>   2) r：可读<br>   3) w：可写<br>   4) x：表示可执行<br>   5) 第一个 r-x：用户所在组的权限<br>   6) 第二个 r-x：任意用户权限</li><li>**.*、./*、*.png 分别代表什么意思？<br>答：代表如下：<ul><li>**.*：所有 xx.xx 格式的文件</li><li>./*：表示当前目录下的所有文件和所有目录</li><li>*.png: 以 .png 结尾的文件</li></ul></li><li>sudo 是什么意思？<br>答： sudo 即 super user do ,它的意思是用超级管理员的权限执行（do）。</li><li>echo ‘aaa’ &gt; a.txt 与 echo ‘bbb’ &gt;&gt; b.txt 有什么区别？<br>答： echo ‘aaa’ &gt; a.txt 表示创建一个 a.txt (如果a.txt不存在）文件，并在 a.txt 中添加 aaa 内容，若再次往 a.txt 添加内容，会覆盖之前的内容。而 echo ‘bbb’ &gt;&gt; b.txt 表示在 b.txt 追加内容，不会覆盖本来就有的文件内容。</li><li>cat 命令能做什么？<br>答：可以进行如下使用：  <ul><li>cat filename：显示该文件内容  </li><li>cat &gt; filename：创建一个文件</li><li>cat filename1 filename2 &gt; filename：将两个文件合并成一个文件</li></ul></li><li>chmod +777 a.sh 是什么意思？ chmod 是什么？+777 是什么意思？<br>答： 表示任何人对 a.sh 都有读、写、运行三项权限。chmod 是目录或者文件权限设置的命令。由于读、写、运行三项权限可以用数字来表示，r=4,w=2,x=1，因此 777 表示 rwxrwxrwx ，即为该用户和其所在的组以及其他人都有最高的权限。</li></ol>]]></content>
     
     <summary type="html">
     
