@@ -50,7 +50,7 @@
   <entry>
     <title><![CDATA[制作轮播2]]></title>
     <url>%2FTongWenQian%2F2019%2F06%2F03%2F%E5%88%B6%E4%BD%9C%E8%BD%AE%E6%92%AD2%2F</url>
-    <content type="text"><![CDATA[将轮播进一步修改为无缝轮播思路用 js 精确控制哪一张显示，哪一张不显示。即不能让图片横向排开，而是每一张图片进行绝对定位，从而保证每张图片的独立性。 代码地址： https://github.com/TongWenQian/slides-2-demo]]></content>
+    <content type="text"><![CDATA[将轮播进一步修改为无缝轮播思路用 js 精确控制哪一张显示，哪一张不显示。即不能让图片横向排开，而是每一张图片进行绝对定位，从而保证每张图片的独立性。 代码地址： https://tongwenqian.github.io/slides2-demo/]]></content>
       <categories>
         <category>前端</category>
         <category>作品制作</category>
