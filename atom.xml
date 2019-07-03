@@ -6,7 +6,7 @@
   <link href="/TongWenQian/atom.xml" rel="self"/>
   
   <link href="https://github.com/TongWenQian/TongWenQian/"/>
-  <updated>2019-06-21T09:03:27.558Z</updated>
+  <updated>2019-07-03T07:48:20.752Z</updated>
   <id>https://github.com/TongWenQian/TongWenQian/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Cookie、Session、Localstorage、Cache-Control相关内容</title>
+    <link href="https://github.com/TongWenQian/TongWenQian/2019/07/03/%E5%85%B3%E4%BA%8ECookie%E3%80%81Session%E3%80%81Localstorage%E3%80%81Cache-Control%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/"/>
+    <id>https://github.com/TongWenQian/TongWenQian/2019/07/03/关于Cookie、Session、Localstorage、Cache-Control相关内容/</id>
+    <published>2019-07-03T02:21:27.000Z</published>
+    <updated>2019-07-03T07:48:20.752Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于-Cookie、Session、Localstorage、Cache-Control"><a href="#关于-Cookie、Session、Localstorage、Cache-Control" class="headerlink" title="关于 Cookie、Session、Localstorage、Cache-Control"></a>关于 Cookie、Session、Localstorage、Cache-Control</h1><h2 id="Cookie-存在的问题"><a href="#Cookie-存在的问题" class="headerlink" title="Cookie 存在的问题"></a>Cookie 存在的问题</h2><p>用户可以随意篡改 Cookie</p><h2 id="Session-与-Cookie-的关系"><a href="#Session-与-Cookie-的关系" class="headerlink" title="Session 与 Cookie 的关系"></a>Session 与 Cookie 的关系</h2><p>一般来说，Session 基于 Cookie 来实现。因为需要将 SessionID（随机数）通过 Cookie 发给客户端。<br><a id="more"></a></p><h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><ol><li>服务器通过 Set-Cookie 头给客户端一串字符串</li><li>客户端每次访问相同域名的网页时，必须带上这段字符串</li><li>客户端要在一段时间内保存这个Cookie</li><li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间<br>大小大概在 4kb 以内<br><strong>前端永远不要读，写 cookie!!!!</strong></li></ol><h3 id="Session（不翻译）"><a href="#Session（不翻译）" class="headerlink" title="Session（不翻译）"></a>Session（不翻译）</h3><ol><li>将 SessionID（随机数）通过 Cookie 发给客户端</li><li>客户端访问服务器时，服务器读取 SessionID</li><li>服务器有一块内存（哈希表）保存了所有 session</li><li>通过 SessionID 我们可以得到对应用户的隐私信息，如 id、email</li><li>这块内存（哈希表）就是服务器上的所有 session</li></ol><p>session 的缺点就是占内存， 而 cookie 不占内存</p><h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><p>html5 提供的 API。</p><h3 id="存值方法如下图"><a href="#存值方法如下图" class="headerlink" title="存值方法如下图"></a>存值方法如下图</h3><p><img src="1.png" alt><br><img src="2.png" alt><br>注意：上述方法只能存储 string。图片2中貌似存入了函数，实际上存的是 string，只不过是将函数转化成了 string。<br>假如存入了 Object 对象。如下图：<br><img src="3.png" alt><br>结果存储的是：<br><img src="4.png" alt><br>(因为 任何对象.toString() 都会变成[Object Object])<br>解决办法如下：<br><img src="5.png" alt><br><img src="6.png" alt><br>问题： cookie 和  localStorage 的区别是什么？<br>答： cookie 在每次请求的时候都会带给服务器，但 HTTP 不会带上 LocalStorage 的值。<br>     cookie 的最大储存量为 4k。localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）。</p><h3 id="取值方法如下图"><a href="#取值方法如下图" class="headerlink" title="取值方法如下图"></a>取值方法如下图</h3><p><img src="7.png" alt></p><h3 id="清空"><a href="#清空" class="headerlink" title="清空"></a>清空</h3><p>   localStorage.clear()</p><h3 id="localStorage-用法"><a href="#localStorage-用法" class="headerlink" title="localStorage 用法"></a>localStorage 用法</h3><p>   对于 windows 用户来说， localStorage 存在 C 盘的文件里(持久化存储)，而不是存在页面中。<br>   localStorage 最典型的应用，记录下有没有提示用户。假设一个网站改版了，弹出窗口提示用户网站改版.代码如下：<br>   <img src="8.png" alt></p><ol><li>LocalStorage 跟 HTTP 无关</li><li>HTTP 不会带上 LocalStorage 的值</li><li>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）</li><li>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）<ul><li>举例如下(122M)：<br><img src="9.png" alt><br>   结果出现如下错误：<br><img src="10.png" alt></li></ul></li><li>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）</li><li>LocalStorage 永久有效，除非用户清理缓存<ul><li>举例：Chrome 浏览器按住 ctrl+shift+delete,勾选”cookie 及其他网站数据（其中’其他网站数据’中就包含localStorage）</li></ul></li></ol><h2 id="sessionStorage（会话存储）"><a href="#sessionStorage（会话存储）" class="headerlink" title="sessionStorage（会话存储）"></a>sessionStorage（会话存储）</h2><p>1、2、3、4 同上</p><ol start="5"><li>SessionStorage 在用户关闭页面（会话结束）后就失效。</li></ol><h3 id="sessionStorage-的使用方法"><a href="#sessionStorage-的使用方法" class="headerlink" title="sessionStorage 的使用方法"></a>sessionStorage 的使用方法</h3><ul><li>使用法法如下：<br><img src="11.png" alt><br><img src="12.png" alt><br>注意：sessionStorage 与 localstorage 的区别在于：localStorage 不会过期，但是 sessionStorage 会自动过期（关闭页面的时候就会过期清空）。</li></ul><h2 id="HTTP-缓存"><a href="#HTTP-缓存" class="headerlink" title="HTTP 缓存"></a>HTTP 缓存</h2><h3 id="Cache-Control-Web-性能优化"><a href="#Cache-Control-Web-性能优化" class="headerlink" title="Cache-Control(Web 性能优化)"></a>Cache-Control(Web 性能优化)</h3><ul><li>举例如下：<br><img src="13.png" alt><br><img src="14.png" alt><br>“Cache-Control:max-age=30”表示 30s 内不要再次请求。<br>过程图如下：<br><img src="15.png" alt></li></ul><h3 id="如何更新缓存"><a href="#如何更新缓存" class="headerlink" title="如何更新缓存"></a>如何更新缓存</h3><p>如果所有的东西都缓存一天或者xx秒，那么很难获得最新的网页。<br>解决办法：<br>首页（index.html)不要设置缓存。假设有一个js设置的 10 年不更新,已知只有相同的 URL 才会用之前的缓存，那么只要让 url 不同即可（比如添加参数），如下图：<br><img src="16.png" alt></p><h3 id="Expire"><a href="#Expire" class="headerlink" title="Expire"></a>Expire</h3><p>Expire 类似 Cache-Control，但是它是设置时间点过期，而 Cache-Control 是设置的多长时间过期。如果用户的本地时间异常（假设设置的时间点在十年之后），那么则有可能永远过期。</p><h3 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h3><p>首先讲讲 md5 ，md5 是摘要算法（把一个文件变成字符串，如果文件有任何地方的改动，那么其对应的 md5 差异会很大）。md5 的一个很大的特征就是如果内容的差异越小，那么算出的结果差异就越大。<br><img src="18.png" alt></p><h3 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h3><p>在浏览器第一次请求某一个URL时，服务器端的返回状态会是200，内容是你请求的资源，同时有一个Last-Modified的属性标记(HttpReponse Header)此文件在服务期端最后被修改的时间，格式类似这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Last-Modified:Tue, 24 Feb 2009 08:01:04 GMT</span><br></pre></td></tr></table></figure></p><p>客户端第二次请求此URL时，根据HTTP协议的规定，浏览器会向服务器传送If-Modified-Since报头(HttpRequest Header)，询问该时间之后文件是否有被修改过：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If-Modified-Since:Tue, 24 Feb 2009 08:01:04 GMT</span><br></pre></td></tr></table></figure></p><p>如果服务器端的资源没有变化，则自动返回HTTP304（NotChanged.）状态码，内容为空，这样就节省了传输数据量。当服务器端代码发生改变或者重启服务器时，则重新发出资源，返回和第一次请求时类似。从而保证不向客户端重复发出资源，也保证当服务器有变化时，客户端能够得到最新的资源。<br>注：如果If-Modified-Since的时间比服务器当前时间(当前的请求时间request_time)还晚，会认为是个非法请求</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;关于-Cookie、Session、Localstorage、Cache-Control&quot;&gt;&lt;a href=&quot;#关于-Cookie、Session、Localstorage、Cache-Control&quot; class=&quot;headerlink&quot; title=&quot;关于 Cookie、Session、Localstorage、Cache-Control&quot;&gt;&lt;/a&gt;关于 Cookie、Session、Localstorage、Cache-Control&lt;/h1&gt;&lt;h2 id=&quot;Cookie-存在的问题&quot;&gt;&lt;a href=&quot;#Cookie-存在的问题&quot; class=&quot;headerlink&quot; title=&quot;Cookie 存在的问题&quot;&gt;&lt;/a&gt;Cookie 存在的问题&lt;/h2&gt;&lt;p&gt;用户可以随意篡改 Cookie&lt;/p&gt;
+&lt;h2 id=&quot;Session-与-Cookie-的关系&quot;&gt;&lt;a href=&quot;#Session-与-Cookie-的关系&quot; class=&quot;headerlink&quot; title=&quot;Session 与 Cookie 的关系&quot;&gt;&lt;/a&gt;Session 与 Cookie 的关系&lt;/h2&gt;&lt;p&gt;一般来说，Session 基于 Cookie 来实现。因为需要将 SessionID（随机数）通过 Cookie 发给客户端。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://github.com/TongWenQian/TongWenQian/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Cookie" scheme="https://github.com/TongWenQian/TongWenQian/tags/Cookie/"/>
+    
+      <category term="Session" scheme="https://github.com/TongWenQian/TongWenQian/tags/Session/"/>
+    
+      <category term="Localstorage" scheme="https://github.com/TongWenQian/TongWenQian/tags/Localstorage/"/>
+    
+      <category term="Cache-Control" scheme="https://github.com/TongWenQian/TongWenQian/tags/Cache-Control/"/>
+    
+  </entry>
   
   <entry>
     <title>JS高级基础知识考试</title>
